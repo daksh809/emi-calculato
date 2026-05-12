@@ -15,7 +15,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.10
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -25,9 +25,9 @@ jobs:
           cmake libffi-dev libssl-dev build-essential
 
           pip install --upgrade pip
-          pip install cython==0.29.36 buildozer==1.5.0 virtualenv
+          pip install cython buildozer==1.5.0 virtualenv
 
-      - name: Clean
+      - name: Clean build
         run: rm -rf .buildozer
 
       - name: Build APK
